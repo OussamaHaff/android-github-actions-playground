@@ -8,3 +8,6 @@ mergeable:
       - do: label
         must_exclude:
           regex: 'wip'
+      - do: label
+          must_exclude:
+            regex: 'DO NOT MERGE'
