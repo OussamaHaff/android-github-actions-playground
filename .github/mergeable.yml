@@ -1,0 +1,16 @@
+version: 2
+mergeable:
+  - when: pull_request.*, status.*, 'issues.*'
+    validate:
+      - do: title
+        must_exclude:
+          regex: 'DO NOT MERGE|WIP'
+          message: 'WIP is used in the title!'
+      - do: label
+        must_exclude:
+          regex: 'wip'
+          message: 'wip label is used.'
+      - do: label
+        must_exclude:
+          regex: 'DO NOT MERGE'
+          message: 'DO NOT MERGE label is used!'
