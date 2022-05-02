@@ -18,3 +18,7 @@ mergeable:
         no_empty:
           enabled: true
           message: 'PR description is empty!'
+      - do: assignee
+        min:
+          count: 1
+          message: 'Please select at least one assignee'
