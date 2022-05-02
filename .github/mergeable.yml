@@ -8,6 +8,8 @@ mergeable:
       - do: label
         must_exclude:
           regex: 'wip'
+          message: 'wip label is used.'
       - do: label
-          must_exclude:
-            regex: 'DO NOT MERGE'
+        must_exclude:
+          regex: 'DO NOT MERGE'
+          message: 'DO NOT MERGE label is used.'
