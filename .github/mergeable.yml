@@ -20,18 +20,18 @@ mergeable:
           enabled: true
           message: 'PR description is empty!'
   - when: pull_request.*, status.*, 'issues.*'
-      name: PR assignee check
-      validate:
-        - do: assignee
-          min:
-            count: 1
-            message: 'Please select at least one assignee'
-      pass:
-        - do: checks
-          status: 'success'
-          payload:
-            title:  'PR assignee looks good!'
-            summary: 'All assignee checks passed'
-      fail:
-        - do: assign
-          assignees: [ '@author' ]
+    name: PR assignee check
+    validate:
+      - do: assignee
+        min:
+          count: 1
+          message: 'Please select at least one assignee'
+    pass:
+      - do: checks
+        status: 'success'
+        payload:
+          title: 'PR assignee looks good!'
+          summary: 'All assignee checks passed'
+    fail:
+      - do: assign
+        assignees: [ '@author' ]
