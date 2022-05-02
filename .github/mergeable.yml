@@ -15,6 +15,6 @@ mergeable:
           regex: 'DO NOT MERGE'
           message: 'DO NOT MERGE label is used!'
       - do: description
-          no_empty:
-            enabled: true
-            message: 'PR description is empty!'
+        no_empty:
+          enabled: true
+          message: 'PR description is empty!'
