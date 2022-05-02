@@ -4,7 +4,8 @@ mergeable:
     validate:
       - do: title
         must_exclude:
-          regex: ^((?!WIP).)*$
+          regex: 'DO NOT MERGE|WIP'
+          message: 'WIP is used in the title!'
       - do: label
         must_exclude:
           regex: 'wip'
@@ -12,4 +13,4 @@ mergeable:
       - do: label
         must_exclude:
           regex: 'DO NOT MERGE'
-          message: 'DO NOT MERGE label is used.'
+          message: 'DO NOT MERGE label is used!'
