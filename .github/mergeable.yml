@@ -15,6 +15,10 @@ mergeable:
         must_exclude:
           regex: 'DO NOT MERGE'
           message: 'DO NOT MERGE label is used!'
+      - do: label
+        must_include:
+        regex: 'QA Done'
+        message: 'You need to add QA Done label!'
       - do: description
         no_empty:
           enabled: true
